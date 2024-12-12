@@ -1,0 +1,104 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ADD8E6;
+    overflow-x: hidden;
+}
+
+.navbar {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: #327ba9;
+    position: fixed;
+    top: 0;
+}
+
+.navbar img {
+    height: inherit;
+    width: 10vw;
+    object-fit: cover;
+    margin-left: 1vw;
+}
+
+.logoutbtn {
+    display: flex;
+}
+
+.logoutbtn .home{
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 3vh;
+    margin: 1vh 0 0 0;
+    cursor: pointer; 
+}
+
+.logoutbtn .logout {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 4vh;
+    margin: 2.5vh 1.5vw 0 0;
+    cursor: pointer;
+}
+
+.content {
+    background-color: rgb(245, 247, 255);
+    width: 80vw;
+    min-height: 70vh;
+    margin: 15vh auto 5vh auto;
+    padding: 1vh 1vw;
+    border-radius: 25px;
+}
+
+.applicants {
+    display: flex;
+    flex-direction: column; /* Ensure that applicants are displayed vertically */
+}
+
+.applicant-item {
+    display: flex; 
+    justify-content: space-between; /* Space between the applicant details and buttons */
+    padding: 1vh 0;
+}
+
+.applicant-details {
+    flex: 1; /* Ensure details take available space */
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 1vh; /* Add space between the buttons */
+    justify-content: flex-start; /* Align buttons to the start */
+}
+
+button {
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.acceptbtn {
+    background-color: #007bff;;
+    color: white;
+}
+
+.rejectbtn {
+    background-color: #f44336;
+    color: white;
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+h1 {
+    margin-left: 1vw;
+}
