@@ -193,6 +193,22 @@ function getApplicants($pdo, $job_id) {
     }
 }
 
+// Get accepted applicants for a specific job
+function getAcceptedApplicants($pdo, $job_id) {
+    try {
+        $sql = "SELECT u.first_name, u.last_name, u.username
+                FROM job_applications ja
+                JOIN users u ON ja.user_id = u.id
+                WHERE ja.job_id = :job_id AND ja.status = 'accepted'";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':job_id', $job_id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        return [];
+    }
+}
+
 
 
 function applyForJob($pdo, $job_id, $user_id) {
@@ -240,7 +256,6 @@ function updateApplicationStatus($pdo, $application_id, $status) {
         $stmt->bindParam(':application_id', $application_id, PDO::PARAM_INT);
         $stmt->execute();
     } catch (PDOException $e) {
-        // Log or handle the error as necessary
         return false;
     }
 }
